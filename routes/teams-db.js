@@ -61,7 +61,7 @@ router.get("/install", async function (req, res, next) {
 router.get("/", async function (req, res, next) {
   try {
     const connection = await getConnection(res);
-    const sql = `SELECT id, promotion, members, name, url FROM teams`;
+    const sql = `SELECT id, activity, domain, details, status FROM teams`;
     connection.query(sql, function (err, results) {
       if (err) {
         console.error(err);
@@ -79,15 +79,15 @@ router.get("/", async function (req, res, next) {
  *
  */
 router.post("/create", async function (req, res, next) {
-  const promotion = req.body.promotion;
-  const members = req.body.members;
-  const name = req.body.name;
-  const url = req.body.url;
+  const activity = req.body.activity;
+  const domain = req.body.domain;
+  const details = req.body.details;
+  const status = req.body.status;
 
   try {
     const connection = await getConnection(res);
-    const sql = `INSERT INTO teams (id, promotion, members, name, url) VALUES (NULL, ?, ?, ?, ?);`;
-    connection.query(sql, [promotion, members, name, url], function (err, results) {
+    const sql = `INSERT INTO teams (id, activity, domain, details, status) VALUES (NULL, ?, ?, ?, ?);`;
+    connection.query(sql, [activity, domain, details, status], function (err, results) {
       if (err) throw err;
       const id = results.insertId;
       connection.release();
@@ -121,15 +121,15 @@ router.delete("/delete", async function (req, res, next) {
  */
 router.put("/update", async function (req, res, next) {
   const id = req.body.id;
-  const members = req.body.members;
-  const name = req.body.name;
-  const url = req.body.url;
-  const promotion = req.body.promotion;
+  const domain = req.body.domain;
+  const details = req.body.details;
+  const status = req.body.status;
+  const activity = req.body.activity;
 
   try {
     const connection = await getConnection(res);
-    const sql = `UPDATE teams SET promotion=?, members=?, name=?, url=? WHERE id=?`;
-    connection.query(sql, [promotion, members, name, url, id], function (err, results) {
+    const sql = `UPDATE teams SET activity=?, domain=?, details=?, status=? WHERE id=?`;
+    connection.query(sql, [activity, domain, details, status, id], function (err, results) {
       if (err) throw err;
       connection.release();
       res.json({ success: true });
