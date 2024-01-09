@@ -21,11 +21,11 @@ Introduction:
 
 # JSON file as storage
 
-Tasks are stored inside data/teams.json
+Tasks are stored inside data/tasks.json
 
 ```
-// GET teams-json
-fetch("http://localhost:3000/teams-json", {
+// GET tasks-json
+fetch("http://localhost:3000/tasks-json", {
 method: "GET",
 headers: {
 "Content-Type": "application/json"
@@ -33,8 +33,8 @@ headers: {
 });
 
 
-// POST teams-json/create
-fetch("http://localhost:3000/teams-json/create", {
+// POST tasks-json/create
+fetch("http://localhost:3000/tasks-json/create", {
 method: "POST",
 headers: {
 "Content-Type": "application/json"
@@ -44,8 +44,8 @@ name: "Wash dishes",
 })
 });
 
-// DELETE teams-json/delete
-fetch("http://localhost:3000/teams-json/delete", {
+// DELETE tasks-json/delete
+fetch("http://localhost:3000/tasks-json/delete", {
 method: "DELETE",
 headers: {
 "Content-Type": "application/json"
@@ -53,8 +53,8 @@ headers: {
 body: JSON.stringify({ id: "fedcba1610309909431" })
 });
 
-// PUT teams-json/update
-fetch("http://localhost:3000/teams-json/update", {
+// PUT tasks-json/update
+fetch("http://localhost:3000/tasks-json/update", {
 method: "PUT",
 headers: {
 "Content-Type": "application/json"
