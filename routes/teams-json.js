@@ -17,20 +17,20 @@ router.get("/", function (req, res, next) {
  *
  */
 router.post("/create", function (req, res, next) {
-  const promotion = req.body.promotion;
-  const members = req.body.members;
-  const name = req.body.name;
-  const url = req.body.url;
+  const activity = req.body.activity;
+  const domain = req.body.domain;
+  const details = req.body.details;
+  const status = req.body.status;
 
   const teams = getTeams();
   const id = Math.random().toString(36).substring(7) + new Date().getTime();
 
   teams.push({
     id,
-    promotion,
-    members,
-    name,
-    url
+    activity,
+    domain,
+    details,
+    status
   });
 
   setTeams(teams);
@@ -57,19 +57,19 @@ router.delete("/delete", function (req, res, next) {
  */
 router.put("/update", function (req, res, next) {
   const id = req.body.id;
-  const promotion = req.body.promotion;
-  const members = req.body.members;
-  const name = req.body.name;
-  const url = req.body.url;
+  const activity = req.body.activity;
+  const domain = req.body.domain;
+  const details = req.body.details;
+  const status = req.body.status;
 
   const teams = getTeams();
 
   const team = teams.find(team => team.id == id);
   if (team) {
-    team.promotion = promotion;
-    team.members = members;
-    team.name = name;
-    team.url = url;
+    team.activity = activity;
+    team.domain = domain;
+    team.details = details;
+    team.status = status;
   }
 
   setTeams(teams);
