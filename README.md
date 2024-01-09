@@ -1,26 +1,29 @@
-# node-api
+# teo-api
 
-- store info in JSON file
-- store info in DB MySQL
-- store info in file similar to mongo format
-- UI Example for this app can be found in teodoravermesan/teams-networking
+Introduction:
 
-  # Install
+[ ] store info in JSON file
+[ ] store info in DB MySQL
+[ ] store info in file similar to mongo format
+[ ] UI Example for this app can be found in teodoravermesan/teams-networking
 
-  -git clone https://github.com/constantinraulivan/to-do-list-api.git
-  -cd to-do-list-api
-  -npm install
+# Install
 
-  # Usage
+[ ] git clone https://github.com/teodoravermesan/teo-api.git
+[ ] cd to-do-list-api
+[ ] npm install
 
-  -npm start
-  -npm run devstart - when you work inside code and want auto restart
-  -Open http://localhost:3000 to see if it works
+# Usage
 
-  # JSON file as storage
+[ ] npm start
+[ ] npm run devstart - when you work inside code and want auto restart
+[ ] Open http://localhost:3000 to see if it works
+
+# JSON file as storage
 
 Tasks are stored inside data/teams.json
 
+```
 // GET teams-json
 fetch("http://localhost:3000/teams-json", {
 method: "GET",
@@ -28,6 +31,7 @@ headers: {
 "Content-Type": "application/json"
 }
 });
+
 
 // POST teams-json/create
 fetch("http://localhost:3000/teams-json/create", {
@@ -61,3 +65,4 @@ name: "Workout 30 min",
 completed: "true";
 })
 });
+```
