@@ -1,0 +1,30 @@
+[
+  {
+    "id": "xrv621664213121591",
+    "promotion": "Lower back exercises",
+    "members": "Sport",
+    "name": "Do 30 min of lower back exercises",
+    "url": "To Do"
+  },
+  {
+    "id": "d70x0l1666987510657",
+    "promotion": "Take vitamins",
+    "members": "Medicine",
+    "name": "Take 3 vit D pills",
+    "url": "To Do"
+  },
+  {
+    "id": "c7kgei1667236275262",
+    "promotion": "Validate QA tickets",
+    "members": "Work",
+    "name": "3 tickets related to custom workflow",
+    "url": "To Do"
+  },
+  {
+    "id": "fawli1667416515640",
+    "promotion": "Dish wash",
+    "members": "House",
+    "name": "Wash all wine glasses",
+    "url": "Done"
+  }
+]
