@@ -10,7 +10,7 @@ Introduction:
 # Install
 
 - git clone https://github.com/teodoravermesan/teo-api.git
-- cd to-do-list-api
+- cd teo-api
 - npm install
 
 # Usage
