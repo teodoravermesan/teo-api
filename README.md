@@ -1,23 +1,23 @@
-# teo-api
+# Node Api
 
 Introduction:
 
-[ ] store info in JSON file
-[ ] store info in DB MySQL
-[ ] store info in file similar to mongo format
-[ ] UI Example for this app can be found in teodoravermesan/teams-networking
+- store info in JSON file
+- store info in DB MySQL
+- store info in file similar to mongo format
+- UI Example for this app can be found in teodoravermesan/teams-networking
 
 # Install
 
-[ ] git clone https://github.com/teodoravermesan/teo-api.git
-[ ] cd to-do-list-api
-[ ] npm install
+- git clone https://github.com/teodoravermesan/teo-api.git
+- cd to-do-list-api
+- npm install
 
 # Usage
 
-[ ] npm start
-[ ] npm run devstart - when you work inside code and want auto restart
-[ ] Open http://localhost:3000 to see if it works
+- npm start
+- npm run devstart - when you work inside code and want auto restart
+- Open http://localhost:3000 to see if it works
 
 # JSON file as storage
 
