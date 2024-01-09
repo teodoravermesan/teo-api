@@ -14,7 +14,7 @@ const pool = mysql.createPool({
   host: "localhost",
   user: "root",
   password: "",
-  database: "tasks"
+  database: "teams"
 });
 
 function getConnection(res) {
@@ -39,7 +39,7 @@ function getConnection(res) {
 }
 
 /**
- * run this before first USAGE to create tasks TABLE
+ * run this before first USAGE to create teams TABLE
  */
 router.get("/install", async function (req, res, next) {
   try {
@@ -61,7 +61,7 @@ router.get("/install", async function (req, res, next) {
 router.get("/", async function (req, res, next) {
   try {
     const connection = await getConnection(res);
-    const sql = `SELECT id, activity, domain, details, status FROM tasks`;
+    const sql = `SELECT id, activity, domain, details, status FROM teams`;
     connection.query(sql, function (err, results) {
       if (err) {
         console.error(err);
@@ -86,7 +86,7 @@ router.post("/create", async function (req, res, next) {
 
   try {
     const connection = await getConnection(res);
-    const sql = `INSERT INTO tasks (id, activity, domain, details, status) VALUES (NULL, ?, ?, ?, ?);`;
+    const sql = `INSERT INTO teams (id, activity, domain, details, status) VALUES (NULL, ?, ?, ?, ?);`;
     connection.query(sql, [activity, domain, details, status], function (err, results) {
       if (err) throw err;
       const id = results.insertId;
@@ -107,7 +107,7 @@ router.delete("/delete", async function (req, res, next) {
 
   try {
     const connection = await getConnection(res);
-    const sql = `DELETE FROM tasks WHERE id=?`;
+    const sql = `DELETE FROM teams WHERE id=?`;
     connection.query(sql, [id], function (err, results) {
       if (err) throw err;
       connection.release();
@@ -128,7 +128,7 @@ router.put("/update", async function (req, res, next) {
 
   try {
     const connection = await getConnection(res);
-    const sql = `UPDATE tasks SET activity=?, domain=?, details=?, status=? WHERE id=?`;
+    const sql = `UPDATE teams SET activity=?, domain=?, details=?, status=? WHERE id=?`;
     connection.query(sql, [activity, domain, details, status, id], function (err, results) {
       if (err) throw err;
       connection.release();
