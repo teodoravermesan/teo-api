@@ -20,7 +20,7 @@ router.post("/create", function (req, res, next) {
   const activity = req.body.activity;
   const domain = req.body.domain;
   const details = req.body.details;
-  const status = req.body.url;
+  const status = req.body.status;
 
   const teams = getTeams();
   const id = Math.random().toString(36).substring(7) + new Date().getTime();
